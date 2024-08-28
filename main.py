@@ -4,15 +4,15 @@ def obtener_cifras_significativas(numero):
     if numero == 0:
         return 0
     elif numero < 1 and numero > 0:
-        exponent = math.floor(math.log10(numero))
-        mantissa = numero / (10 ** exponent)
-        mantissa = round(mantissa * 1000) / 1000  # Redondear a 3 cifras significativas
-        numero = mantissa * (10 ** exponent)
+        expo = math.floor(math.log10(numero))
+        ope = numero / (10 ** expo)
+        ope = round(ope * 1000) / 1000  # Redondear a 3 cifras significativas
+        numero = ope * (10 ** expo)
     elif numero >= 1:
-        exponent = math.floor(math.log10(numero)) - 2
-        mantissa = numero / (10 ** exponent)
-        mantissa = round(mantissa) / 100  # Redondear a 3 cifras significativas
-        numero = mantissa * (10 ** exponent)
+        expo = math.floor(math.log10(numero)) - 2
+        ope = numero / (10 ** expo)
+        ope = round(ope) / 100  # Redondear a 3 cifras significativas
+        numero = ope * (10 ** expo)
     return numero
 
 #pidiendo los datos al usuario
